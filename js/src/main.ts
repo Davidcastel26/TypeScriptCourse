@@ -24,21 +24,33 @@ const getFullName = (name:string, surname:string):string => {
 console.log(getFullName("Dave","C"));
 
 //-----USING INTERFACE WITH OBJS ----------
-interface User{
+// this is an interface
+// in the name section as a global convention we need to set the name like ( IName || NameInterface )
+interface UserInterface{
+    // this setting are mandatory but if we wouldn't like to have all the props mandatory we can use a no-mandatory option after the name set a question mark and before the colons like the 31 line
     name:string,
-    age:number
+    // ? will avoil any kind of errors
+    age?:number,
+    getMessage():string,
 }
 // when we used to set an obj we just create the variable and then the Obj, like down below 👇🏾
 // const user = {
 // since we are using TS we must set the type of the content inside of the Obj, check donw below 👇🏾
 // const user:{name:string, age:number} = {
-
-const user:{name:string, age:number} = {
+// we have something special in TS wich allow us to get this types of value and setting into the Obt, we use the reserv word (interface) + the name of the interface (by convention we can use capital letter) check the line 27
+const user: UserInterface = {
     name: 'Monster',
-    age: 3
+    age: 3,
+    getMessage(){
+        return "Hello" + this.name;
+    }
 }
 
-const user2:{name:string, age:number} = {
+const user2: UserInterface = {
     name:"Ja",
-    age:1
-}
+    getMessage(){
+        return "Hey" + this.name
+    }
+} 
+
+console.log(user.name);

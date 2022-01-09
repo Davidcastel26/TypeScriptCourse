@@ -22,11 +22,18 @@ console.log(getFullName("Dave", "C"));
 // const user = {
 // since we are using TS we must set the type of the content inside of the Obj, check donw below 👇🏾
 // const user:{name:string, age:number} = {
+// we have something special in TS wich allow us to get this types of value and setting into the Obt, we use the reserv word (interface) + the name of the interface (by convention we can use capital letter) check the line 27
 var user = {
     name: 'Monster',
-    age: 3
+    age: 3,
+    getMessage: function () {
+        return "Hello" + this.name;
+    }
 };
 var user2 = {
     name: "Ja",
-    age: 1
+    getMessage: function () {
+        return "Hey" + this.name;
+    }
 };
+console.log(user.name);
