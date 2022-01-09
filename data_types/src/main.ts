@@ -1,3 +1,7 @@
-const holas = "23";
+//const works as a real const
+const hello1 = "word";
+//since we are defining the variable as a default value, if we will define it as a new value we will get an error for sure
+// hello : '23';
+// ❌ => hello = "foo"
 
-console.log(holas);
+console.log(hello1);
