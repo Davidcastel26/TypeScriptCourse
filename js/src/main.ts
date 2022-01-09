@@ -9,3 +9,4 @@ console.log(hello1);
 let hello2 = "word2";
 //in this case Let variable will allowe us to set a new value in it, we won't get an error, don't worry
 hello2 = "thisIsWord";
+// hello2 : "string" = "";
