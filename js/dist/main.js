@@ -18,3 +18,15 @@ var getFullName = function (name, surname) {
 //since we did not provide the type of value into the params we can set any type of value in it but that is not right, We must set the type of value
 //❌ => console.log(getFullName(true, ["foo"]));
 console.log(getFullName("Dave", "C"));
+// when we used to set an obj we just create the variable and then the Obj, like down below 👇🏾
+// const user = {
+// since we are using TS we must set the type of the content inside of the Obj, check donw below 👇🏾
+// const user:{name:string, age:number} = {
+var user = {
+    name: 'Monster',
+    age: 3
+};
+var user2 = {
+    name: "Ja",
+    age: 1
+};

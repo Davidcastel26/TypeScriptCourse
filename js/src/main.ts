@@ -23,3 +23,22 @@ const getFullName = (name:string, surname:string):string => {
 //❌ => console.log(getFullName(true, ["foo"]));
 console.log(getFullName("Dave","C"));
 
+//-----USING INTERFACE WITH OBJS ----------
+interface User{
+    name:string,
+    age:number
+}
+// when we used to set an obj we just create the variable and then the Obj, like down below 👇🏾
+// const user = {
+// since we are using TS we must set the type of the content inside of the Obj, check donw below 👇🏾
+// const user:{name:string, age:number} = {
+
+const user:{name:string, age:number} = {
+    name: 'Monster',
+    age: 3
+}
+
+const user2:{name:string, age:number} = {
+    name:"Ja",
+    age:1
+}
