@@ -12,3 +12,9 @@ hello2 = "thisIsWord";
 // in type script we are allow to retype into a variable that contains the same type, that means if we are using a variable with type string WE MUST use string value, if not we will get an error for sure
 // ❌ => hello2 = true;
 //type 'true' is not assignable to type 'string'
+var getFullName = function (name, surname) {
+    return name + " " + surname;
+};
+//since we did not provide the type of value into the params we can set any type of value in it but that is not right, We must set the type of value
+//❌ => console.log(getFullName(true, ["foo"]));
+console.log(getFullName("Dave", "C"));
