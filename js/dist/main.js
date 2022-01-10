@@ -49,4 +49,35 @@ var pageName = 1;
 var errorMessage = null;
 // we can use interfaces with union as well 👇🏾
 var human = null;
-// some variable are declared in this way but is not a good option so try to avoid it ❌  -->>> let someProps: number | null | [] | string | true= true;
+// some variable are declared in this way but is not a good option so try to avoid it ❌
+var someProps = true;
+// ---- VOID in TS -------------
+//void is a set of undefined and null
+var doSomething = function () {
+    console.log("dosomething");
+    //in this case we could not return a number
+};
+var foo = undefined;
+// ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
+var foos = "foo";
+// --- Never 
+//A function returning 'never' cannot have a reachable end point.
+var doNothing = function () {
+    throw "never";
+    // console.log("doNothing");
+};
+// ---- Unknown type ---
+// at the begining unknown and any works as equal 
+var vAny = 10;
+var vUnknow = 10;
+//lets check here the diferences 👇🏾
+var s1 = vAny;
+// this will give us an error, since unkonw is not defined as an especific value we can not set a type value in there
+// let s2: string = vUnknow;
+// BONUS TYPE ASSERTION IN TS 
+// this will help us in order to provide a type a specifict value check 👇🏾
+var s2 = vUnknow;
+var pageNumber = "1";
+// if we would like to convert it 
+// we must convert | unknow |           👇🏾
+var numericPageNumber = pageNumber;

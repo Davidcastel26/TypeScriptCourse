@@ -86,4 +86,42 @@ let pageName : string | number = 1;
 let errorMessage: string | null = null;
 // we can use interfaces with union as well 👇🏾
 let human: HumanInterface | null = null;
-// some variable are declared in this way but is not a good option so try to avoid it ❌  -->>> let someProps: number | null | [] | string | true= true;
+// some variable are declared in this way but is not a good option so try to avoid it ❌
+let someProps: number | null | [] | string | true= true;
+
+// ---- VOID in TS -------------
+//void is a set of undefined and null
+const doSomething = (): void => {
+    console.log("dosomething");
+    //in this case we could not return a number
+}
+
+const foo: void = undefined 
+// ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
+let foos: any = "foo";
+ 
+// --- Never 
+//A function returning 'never' cannot have a reachable end point.
+const doNothing = (): never => {
+    throw "never";
+    // console.log("doNothing");
+}
+
+// ---- Unknown type ---
+// at the begining unknown and any works as equal 
+let vAny: any = 10;
+let vUnknow: unknown = 10;
+
+//lets check here the diferences 👇🏾
+let s1: string = vAny;
+// this will give us an error, since unkonw is not defined as an especific value we can not set a type value in there
+// let s2: string = vUnknow;
+
+// BONUS TYPE ASSERTION IN TS 
+// this will help us in order to provide a type a specifict value check 👇🏾
+let s2: string = vUnknow as string;
+
+let pageNumber: string = "1";
+// if we would like to convert it 
+// we must convert | unknow |           👇🏾
+let numericPageNumber: number = (pageNumber as unknown) as number;
