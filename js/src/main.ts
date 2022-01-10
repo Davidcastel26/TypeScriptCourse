@@ -54,3 +54,36 @@ const user2: UserInterface = {
 } 
 
 console.log(user.name);
+
+//------UNION OPERATOR IN TS ---------
+
+// type aliases in ts 
+// we can create diferents types of aliases in diferent thigs
+// ID by default did not do anything
+type ID = string;
+type PopularTag = string;
+// lets check this custom type with an union
+type MaybePopularTag = PopularTag | null; 
+
+interface HumanInterface {
+    // we are doing it with the id since we want the code to be as understandable as possible
+    id: ID;
+    name: string;
+    surname: string;
+}
+
+// const popularTags: string[]  = ['dragon']
+// we can use string like before but since we already are using the type, we are able to use that type into our array
+const popularTags: PopularTag[]  = ['dragon']
+
+const dragonsTag: MaybePopularTag = "drakaris";
+
+let username: string = 'Dave';
+// union will provide us the option to set a variable as to way like donw below 👇🏾
+let pageName : string | number = 1;
+// one of the common cases are to set something as null
+// as will be able to see donw below 👇🏾, this could be part for an error handeler
+let errorMessage: string | null = null;
+// we can use interfaces with union as well 👇🏾
+let human: HumanInterface | null = null;
+// some variable are declared in this way but is not a good option so try to avoid it ❌  -->>> let someProps: number | null | [] | string | true= true;

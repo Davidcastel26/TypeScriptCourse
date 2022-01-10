@@ -37,3 +37,16 @@ var user2 = {
     }
 };
 console.log(user.name);
+// const popularTags: string[]  = ['dragon']
+// we can use string like before but since we already are using the type, we are able to use that type into our array
+var popularTags = ['dragon'];
+var dragonsTag = "drakaris";
+var username = 'Dave';
+// union will provide us the option to set a variable as to way like donw below 👇🏾
+var pageName = 1;
+// one of the common cases are to set something as null
+// as will be able to see donw below 👇🏾, this could be part for an error handeler
+var errorMessage = null;
+// we can use interfaces with union as well 👇🏾
+var human = null;
+// some variable are declared in this way but is not a good option so try to avoid it ❌  -->>> let someProps: number | null | [] | string | true= true;
