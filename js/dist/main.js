@@ -37,6 +37,15 @@ var user2 = {
     }
 };
 console.log(user.name);
+var matias = {
+    name: 'matias',
+    lastname: 'lamela',
+    age: 23,
+    isActive: true,
+    wave: function () {
+        console.log('hello');
+    }
+};
 // const popularTags: string[]  = ['dragon']
 // we can use string like before but since we already are using the type, we are able to use that type into our array
 var popularTags = ['dragon'];

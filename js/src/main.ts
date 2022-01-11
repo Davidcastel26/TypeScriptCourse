@@ -55,6 +55,31 @@ const user2: UserInterface = {
 
 console.log(user.name);
 
+//we can use it as well in PO 
+
+interface Person11Interface {
+    name: string;
+    lastname: string;
+    age: number;
+}
+
+//to avoid to writte again all the info in it we can use extends
+interface StudentInterface extends Person11Interface{
+    //name: string;
+    //lastanme: string;
+    //age : number
+    isActive : boolean;
+    wave: () => void;
+}
+
+let matias: StudentInterface = {
+    name: 'matias',
+    lastname: 'lamela',
+    age: 23,
+    isActive: true,
+    wave: () => {console.log('hello');
+    }
+}
 //------UNION OPERATOR IN TS ---------
 
 // type aliases in ts 
