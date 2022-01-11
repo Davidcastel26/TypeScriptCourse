@@ -81,3 +81,5 @@ var pageNumber = "1";
 // if we would like to convert it 
 // we must convert | unknow |           👇🏾
 var numericPageNumber = pageNumber;
+//Tuplas
+var tupla = ['dave', 29];

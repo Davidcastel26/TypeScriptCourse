@@ -125,3 +125,7 @@ let pageNumber: string = "1";
 // if we would like to convert it 
 // we must convert | unknow |           👇🏾
 let numericPageNumber: number = (pageNumber as unknown) as number;
+
+
+//Tuplas
+let tupla: [string, number] = ['dave',29]
