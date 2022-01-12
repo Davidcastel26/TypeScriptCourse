@@ -83,14 +83,40 @@ var doSomething = function () {
     //in this case we could not return a number
 };
 var foo = undefined;
+// WE CAN USE VOID IN REACT WHEN WE SET A STATE IN REACT
+var hello12 = function () {
+    console.log('newState');
+};
 // ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
 var foos = "foo";
 // --- Never 
 //A function returning 'never' cannot have a reachable end point.
+// we use never in order to return an error
 var doNothing = function () {
     throw "never";
     // console.log("doNothing");
 };
+//narrowing
+//the process of refining types to more specific types than declared
+function summ(a, b) {
+    // ❌ => cannot be applied to types 'string | nubmer and string number'
+    // return a + b
+    //if we would like to return something like this we can do this 👇🏾
+    if (typeof a === 'number' && typeof b === 'number')
+        return a + b;
+    if (typeof b === 'string' && typeof b === 'string')
+        return a + b;
+}
+// this is a diferent option to do that 👇🏾
+function pluss(a, b) {
+    if (typeof a === 'string') {
+        a = parseInt(a);
+    }
+    if (typeof b === 'string') {
+        b = parseInt(b);
+    }
+    return a + b;
+}
 // ---- Unknown type ---
 // at the begining unknown and any works as equal 
 var vAny = 10;

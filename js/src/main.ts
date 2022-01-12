@@ -128,14 +128,42 @@ const doSomething = (): void => {
 }
 
 const foo: void = undefined 
+
+ // WE CAN USE VOID IN REACT WHEN WE SET A STATE IN REACT
+ const hello12 = ():void =>{
+    console.log('newState');
+}
+
 // ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
 let foos: any = "foo";
  
 // --- Never 
 //A function returning 'never' cannot have a reachable end point.
+// we use never in order to return an error
 const doNothing = (): never => {
     throw "never";
     // console.log("doNothing");
+}
+
+//narrowing
+//the process of refining types to more specific types than declared
+function summ( a:number | string, b: number | string): number | string | void{
+    // ❌ => cannot be applied to types 'string | nubmer and string number'
+    // return a + b
+    
+//if we would like to return something like this we can do this 👇🏾
+    if(typeof a === 'number' && typeof b === 'number') return a + b;
+    if(typeof b === 'string' && typeof b === 'string') return a + b;
+}
+// this is a diferent option to do that 👇🏾
+function pluss( a: string | number, b: string | number): number{
+    if(typeof a === 'string'){
+        a = parseInt(a)
+    }
+    if(typeof b === 'string'){
+        b = parseInt(b)
+    }
+    return a + b;
 }
 
 // ---- Unknown type ---
