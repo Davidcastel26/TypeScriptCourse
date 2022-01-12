@@ -166,6 +166,36 @@ function pluss( a: string | number, b: string | number): number{
     return a + b;
 }
 
+//  ----------GENERIC FUNCTIONS ---------**************
+
+//we will use it in the action in redux -> are generic funcs 
+// and in the axios.get are generic funcs 
+//axios.get<Person> ----> response.data --> it will be at person, and it's going to bring the type
+
+let arrs1 = [1,2,3,4]
+let arrs2 = ['a','b','c']
+// we should not do this 👇🏾 cause we will lose the type value in the [variable elements1] in this case we could use (Generic Functions)
+// function firstElement(arr: any[]){
+    // return arr[0]
+// }
+function firstElement<Type>(arr:Type[]):Type { // as global convention TYPE could be as T, V, U
+    return arr[0]
+} 
+
+let elementsNumber = firstElement(arrs1) // implicit <number>
+let elementsStrings = firstElement<string>(arrs2) // explicit
+
+//pluck Func
+// [{}]
+function merge<U extends object, V extends object >(objOne: U, objTwo: V ){
+    return{
+        ...objOne,
+        ...objTwo
+    }
+}
+
+merge({name:'Franco'},{age:33})
+
 // ---- Unknown type ---
 // at the begining unknown and any works as equal 
 let vAny: any = 10;

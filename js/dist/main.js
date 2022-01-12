@@ -13,6 +13,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 //const works as a real const
 var hello1 = "word";
 //since we are defining the variable as a default value, if we will define it as a new value we will get an error for sure
@@ -117,6 +128,27 @@ function pluss(a, b) {
     }
     return a + b;
 }
+//  ----------GENERIC FUNCTIONS ---------**************
+//we will use it in the action in redux -> are generic funcs 
+// and in the axios.get are generic funcs 
+//axios.get<Person> ----> response.data --> it will be at person, and it's going to bring the type
+var arrs1 = [1, 2, 3, 4];
+var arrs2 = ['a', 'b', 'c'];
+// we should not do this 👇🏾 cause we will lose the type value in the [variable elements1] in this case we could use (Generic Functions)
+// function firstElement(arr: any[]){
+// return arr[0]
+// }
+function firstElement(arr) {
+    return arr[0];
+}
+var elementsNumber = firstElement(arrs1); // implicit <number>
+var elementsStrings = firstElement(arrs2); // explicit
+//pluck Func
+// [{}]
+function merge(objOne, objTwo) {
+    return __assign(__assign({}, objOne), objTwo);
+}
+merge({ name: 'Franco' }, { age: 33 });
 // ---- Unknown type ---
 // at the begining unknown and any works as equal 
 var vAny = 10;
