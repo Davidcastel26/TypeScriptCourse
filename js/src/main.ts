@@ -198,6 +198,17 @@ function merge<U extends object, V extends object >(objOne: U, objTwo: V ){
 
 merge({name:'Franco'},{age:33})
 
+// ---------- FUNCTION OVERLOADS ---------------------------------------------------------------
+// it's a way where we can call a func with diferents types 
+ 
+function timesNum(a: number, b: string): string;
+function timesNum(a: string, b: string): string;
+function timesNum(a: string, b: number): string;
+function timesNum(a: number, b: number): number{
+    return a + b;
+}
+let resultTotal = timesNum('2', 2)
+
 // ---- Unknown type --------------------------------------------------------------------------------
 // at the begining unknown and any works as equal 
 let vAny: any = 10;

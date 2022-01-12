@@ -150,6 +150,10 @@ function merge(objOne, objTwo) {
     return __assign(__assign({}, objOne), objTwo);
 }
 merge({ name: 'Franco' }, { age: 33 });
+function timesNum(a, b) {
+    return a + b;
+}
+var resultTotal = timesNum('2', 2);
 // ---- Unknown type --------------------------------------------------------------------------------
 // at the begining unknown and any works as equal 
 var vAny = 10;
