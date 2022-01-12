@@ -87,7 +87,7 @@ var errorMessage = null;
 var human = null;
 // some variable are declared in this way but is not a good option so try to avoid it ❌
 var someProps = true;
-// ---- VOID in TS -------------
+// ---- VOID in TS ----------------------------------------------------------------------------
 //void is a set of undefined and null
 var doSomething = function () {
     console.log("dosomething");
@@ -100,14 +100,14 @@ var hello12 = function () {
 };
 // ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
 var foos = "foo";
-// --- Never 
+// --- Never ----------------------------------------------------------------------------------
 //A function returning 'never' cannot have a reachable end point.
 // we use never in order to return an error
 var doNothing = function () {
     throw "never";
     // console.log("doNothing");
 };
-//narrowing
+//narrowing-----------------------------------------------------------------------------------------
 //the process of refining types to more specific types than declared
 function summ(a, b) {
     // ❌ => cannot be applied to types 'string | nubmer and string number'
@@ -128,10 +128,11 @@ function pluss(a, b) {
     }
     return a + b;
 }
-//  ----------GENERIC FUNCTIONS ---------**************
+//  ----------GENERIC FUNCTIONS ------------------------------------------------------**************
 //we will use it in the action in redux -> are generic funcs 
 // and in the axios.get are generic funcs 
 //axios.get<Person> ----> response.data --> it will be at person, and it's going to bring the type
+//useSteta from react, use generic function
 var arrs1 = [1, 2, 3, 4];
 var arrs2 = ['a', 'b', 'c'];
 // we should not do this 👇🏾 cause we will lose the type value in the [variable elements1] in this case we could use (Generic Functions)
@@ -149,7 +150,7 @@ function merge(objOne, objTwo) {
     return __assign(__assign({}, objOne), objTwo);
 }
 merge({ name: 'Franco' }, { age: 33 });
-// ---- Unknown type ---
+// ---- Unknown type --------------------------------------------------------------------------------
 // at the begining unknown and any works as equal 
 var vAny = 10;
 var vUnknow = 10;
@@ -164,9 +165,9 @@ var pageNumber = "1";
 // if we would like to convert it 
 // we must convert | unknow |           👇🏾
 var numericPageNumber = pageNumber;
-//Tuplas
+//Tuplas -----------------------------------------------------------------------
 var tupla = ['dave', 29];
-// CLASS -------------------------------------------------------------
+// CLASS ------------------------------------------------------------------------
 var Iperson = /** @class */ (function () {
     function Iperson(name, age, email) {
         this.name = name;

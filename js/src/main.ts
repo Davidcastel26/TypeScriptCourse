@@ -23,7 +23,8 @@ const getFullName = (name:string, surname:string):string => {
 //❌ => console.log(getFullName(true, ["foo"]));
 console.log(getFullName("Dave","C"));
 
-//-----USING INTERFACE WITH OBJS ----------
+//-----USING INTERFACE WITH OBJS -----------------------------------------------------------------------
+
 // this is an interface
 // in the name section as a global convention we need to set the name like ( IName || NameInterface )
 interface UserInterface{
@@ -86,7 +87,7 @@ let matias: StudentInterface = {
     },
     hobbies: [{name:'read'}]
 }
-//------UNION OPERATOR IN TS ---------
+//------UNION OPERATOR IN TS --------------------------------------------------------------
 
 // type aliases in ts 
 // we can create diferents types of aliases in diferent thigs
@@ -120,7 +121,7 @@ let human: HumanInterface | null = null;
 // some variable are declared in this way but is not a good option so try to avoid it ❌
 let someProps: number | null | [] | string | true= true;
 
-// ---- VOID in TS -------------
+// ---- VOID in TS ----------------------------------------------------------------------------
 //void is a set of undefined and null
 const doSomething = (): void => {
     console.log("dosomething");
@@ -137,7 +138,7 @@ const foo: void = undefined
 // ----- Any 'we could use it in cases that we cannot fix an error, be careful with that' -------
 let foos: any = "foo";
  
-// --- Never 
+// --- Never ----------------------------------------------------------------------------------
 //A function returning 'never' cannot have a reachable end point.
 // we use never in order to return an error
 const doNothing = (): never => {
@@ -145,7 +146,7 @@ const doNothing = (): never => {
     // console.log("doNothing");
 }
 
-//narrowing
+//narrowing-----------------------------------------------------------------------------------------
 //the process of refining types to more specific types than declared
 function summ( a:number | string, b: number | string): number | string | void{
     // ❌ => cannot be applied to types 'string | nubmer and string number'
@@ -166,11 +167,12 @@ function pluss( a: string | number, b: string | number): number{
     return a + b;
 }
 
-//  ----------GENERIC FUNCTIONS ---------**************
+//  ----------GENERIC FUNCTIONS ------------------------------------------------------**************
 
 //we will use it in the action in redux -> are generic funcs 
 // and in the axios.get are generic funcs 
 //axios.get<Person> ----> response.data --> it will be at person, and it's going to bring the type
+//useSteta from react, use generic function
 
 let arrs1 = [1,2,3,4]
 let arrs2 = ['a','b','c']
@@ -196,7 +198,7 @@ function merge<U extends object, V extends object >(objOne: U, objTwo: V ){
 
 merge({name:'Franco'},{age:33})
 
-// ---- Unknown type ---
+// ---- Unknown type --------------------------------------------------------------------------------
 // at the begining unknown and any works as equal 
 let vAny: any = 10;
 let vUnknow: unknown = 10;
@@ -216,11 +218,11 @@ let pageNumber: string = "1";
 let numericPageNumber: number = (pageNumber as unknown) as number;
 
 
-//Tuplas
+//Tuplas -----------------------------------------------------------------------
 let tupla: [string, number] = ['dave',29]
 
 
-// CLASS -------------------------------------------------------------
+// CLASS ------------------------------------------------------------------------
 
 class Iperson{
     name: string;
