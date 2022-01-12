@@ -60,8 +60,13 @@ console.log(user.name);
 interface Person11Interface {
     name: string;
     lastname: string;
-    age: number;
+    age: number; 
+    hobbies?: HobbyInterface[]
 }
+
+interface HobbyInterface {
+    name: string
+} 
 
 //to avoid to writte again all the info in it we can use extends
 interface StudentInterface extends Person11Interface{
@@ -78,7 +83,8 @@ let matias: StudentInterface = {
     age: 23,
     isActive: true,
     wave: () => {console.log('hello');
-    }
+    },
+    hobbies: [{name:'read'}]
 }
 //------UNION OPERATOR IN TS ---------
 
@@ -154,3 +160,36 @@ let numericPageNumber: number = (pageNumber as unknown) as number;
 
 //Tuplas
 let tupla: [string, number] = ['dave',29]
+
+
+// CLASS -------------------------------------------------------------
+
+class Iperson{
+    name: string;
+    private age: number;
+    protected email : string;
+    constructor(name: string, age:number, email:string){
+        this.name = name;
+        this.age =  age;
+        this.email = email;
+    }
+    getAge(){
+        return `I am ${this.age}`
+    }
+}
+let martina = new Iperson('martina', 32, 'holi@d.com')
+martina.name // public
+//❌ martina.age  ---- we cannot do it since that is private in this case we need to pass it into a func check the line 174
+martina.getAge()
+
+class Aluminum extends Iperson{
+    isActive : boolean;
+    constructor(name:string, age:number, email:string){
+        super(name,age,email)
+        this.isActive = false
+    }
+    funcTest(){
+        //since email is a variable protected a child class is able to use it
+        this.email
+    }
+}

@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //const works as a real const
 var hello1 = "word";
 //since we are defining the variable as a default value, if we will define it as a new value we will get an error for sure
@@ -44,7 +59,8 @@ var matias = {
     isActive: true,
     wave: function () {
         console.log('hello');
-    }
+    },
+    hobbies: [{ name: 'read' }]
 };
 // const popularTags: string[]  = ['dragon']
 // we can use string like before but since we already are using the type, we are able to use that type into our array
@@ -92,3 +108,32 @@ var pageNumber = "1";
 var numericPageNumber = pageNumber;
 //Tuplas
 var tupla = ['dave', 29];
+// CLASS -------------------------------------------------------------
+var Iperson = /** @class */ (function () {
+    function Iperson(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+    Iperson.prototype.getAge = function () {
+        return "I am ".concat(this.age);
+    };
+    return Iperson;
+}());
+var martina = new Iperson('martina', 32, 'holi@d.com');
+martina.name; // public
+//❌ martina.age  ---- we cannot do it since that is private in this case we need to pass it into a func check the line 174
+martina.getAge();
+var Aluminum = /** @class */ (function (_super) {
+    __extends(Aluminum, _super);
+    function Aluminum(name, age, email) {
+        var _this = _super.call(this, name, age, email) || this;
+        _this.isActive = false;
+        return _this;
+    }
+    Aluminum.prototype.funcTest = function () {
+        //since email is a variable protected a child class is able to use it
+        this.email;
+    };
+    return Aluminum;
+}(Iperson));
